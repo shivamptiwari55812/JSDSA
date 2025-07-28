@@ -1,0 +1,71 @@
+body{
+    margin:0px;
+    padding:0px;
+    background-color: beige;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.listdiv{
+    display:flex;
+    gap:5vw;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap:10vh;
+    width:40vw;
+    padding:4rem;
+    border-radius:15px;
+    box-shadow: 0 0 30px rgba(24, 24, 15, 0.373);
+    background-color: hsla(24, 81%, 45%, 0.582);
+}
+
+#select{
+    padding:5px;
+    border:1px solid rgba(0, 0, 0, 0.281);
+    border-radius: 5px;
+    width:max-content;
+    box-shadow:0 0 30px rgba(0, 0, 0, 0.399);
+}
+
+#select:hover{
+ background-color: rgba(97, 20, 184, 0.271);
+}
+
+#select:focus{
+      background-color: rgba(97, 20, 184, 0.271);;
+}
+#Label{
+    font-size: large;
+    color:hsla(180, 3%, 6%, 0.996);
+}
+
+h1{
+color:black;
+}
+
+.outerDiv{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:5vh;
+    align-items: center;
+}
+.claimBtn{
+    padding:1rem;
+    border-radius:100px;
+    border:1px solid rgba(28, 24, 24, 0.205);
+    box-shadow:0 0 50px rgba(0, 0, 0, 0.722);
+    color:black;
+    background-color:rgba(97, 20, 184, 0.566);
+
+}
+.claimBtn:hover{
+    background-color: rgba(97, 20, 184, 0.271);
+}
