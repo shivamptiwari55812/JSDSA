@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import {List} from "../components/List.jsx"
-import { LeaderBoard } from '../components/leaderboard.jsx'
-import{createBrowserRouter, RouterProvider} from "react-router-dom"
+import {List} from "./components/List.jsx"
+import { LeaderBoard } from './components/leaderboard.jsx'
+import{createBrowserRouter, RouterProvider } from "react-router-dom"
 
 const router = createBrowserRouter([
   
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
   }
 ])
 function App() {
+  
   const [count, setCount] = useState(0)
 
   return (

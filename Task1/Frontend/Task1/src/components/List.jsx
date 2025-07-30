@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "../cssforComponents/style.css";
-
+import { LeaderBoard } from "./leaderboard.jsx";
+import{useNavigate} from "react-router-dom"
 export function List() {
+  
+const navigate = useNavigate();
   const [players, setPlayers] = useState({
     Rahul: 0,
     Moti: 0,
@@ -17,7 +20,7 @@ export function List() {
   const [selectedPlayer, setSelectedPlayer] = useState("");
   const [claim, setClaim] = useState(0);
 
-  const handleClaim = (e) => {
+  const handleClaim =async  (e) => {
     e.preventDefault();
 
     const randomValue = Math.floor(Math.random() * 10) + 1;
@@ -28,28 +31,53 @@ export function List() {
 
       [selectedPlayer]: prevPlayers[selectedPlayer] + randomValue,
     }));
-    console.log(randomValue,selectedPlayer);
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    console.log(randomValue, selectedPlayer);
 
     try {
-      const response = await fetch("https://localhost:5000/api/submit", {
+      const response = await fetch("http://localhost:7000/api/scores", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: selectedPlayers,
-          score: players[selectedPlayer],
-
+          name: selectedPlayer,
+          score:randomValue,
         }),
       });
 
       const result = await response.json();
       console.log(result.message);
-    } catch (error) {}
+      if(result.message == "successfully stored score" || result.message == "success"){
+        navigate("/LeaderBoard")
+      }
+      console.log("Shivam")
+
+    } catch (error) {
+      console.error(error.message);
+    }
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await fetch("http://localhost:7000/api/scores", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name: selectedPlayer,
+  //         score: players[selectedPlayer],
+
+  //       }),
+  //     });
+
+  //     const result = await response.json();
+  //     console.log(result.message);
+  //   } catch (error) {
+  //     console.error(error.message)
+  //   }
+  // };
 
   return (
     <>
@@ -72,7 +100,6 @@ export function List() {
                   {player}
                 </option>
               ))}
-                
             </select>
           </div>
           <button className="claimBtn" onClick={handleClaim}>
@@ -80,7 +107,7 @@ export function List() {
           </button>
         </form>
         <div className="result">
-          <h1>You have Got :- {claim}</h1>
+          <h1>Hey! you have Got :- {claim}</h1>
         </div>
       </div>
     </>

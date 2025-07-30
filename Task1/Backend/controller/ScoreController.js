@@ -9,10 +9,10 @@ export const getScores = async(req ,res)=>{
             return res.status(400).json({"message":"Bad Request"})
         }
         
-        const Player = await database.findOne({name})
+        let Player = await database.findOne({name})
         if(!Player){
-            player = new database({name ,score})
-            await player.save()
+            Player = new database({name ,score})
+            await Player.save()
         }
         else{
             Player.score += score

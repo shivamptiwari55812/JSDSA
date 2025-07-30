@@ -4,7 +4,7 @@ import  {getScores,sendData}  from '../controller/ScoreController.js';
 const router = express.Router();
 
 
-router.get('/scores',getScores)
-router.post("/sendData",sendData )
+router.post('/scores',getScores)
+router.get("/sendData",sendData )
 // router.post()
 export default router;

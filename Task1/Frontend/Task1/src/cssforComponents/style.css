@@ -132,3 +132,15 @@ tbody tr:nth-child(even) {
   background-color:rgba(97, 20, 184, 0.205);
 }
 
+
+#backButton{
+   padding:5px;
+   border-radius: 5px;
+   border:none;
+   background-color: rgba(97, 20, 184, 0.566);
+   box-shadow:0 0 50px rgba(0, 0, 0, 0.722);
+   color:white;
+   font-size: 1.1rem;
+   cursor: pointer;
+   margin-top: 5vh;
+}
