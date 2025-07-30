@@ -15,7 +15,8 @@ export function LeaderBoard(){
 
         const result = await response.json();
         console.log(result)
-        setPlayerData(result);
+        const sortedResult = result.sort((a, b) => b.score - a.score);
+        setPlayerData(sortedResult);
 
     }
     catch(error){
