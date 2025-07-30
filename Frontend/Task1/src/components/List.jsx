@@ -34,7 +34,7 @@ const navigate = useNavigate();
     console.log(randomValue, selectedPlayer);
 
     try {
-      const response = await fetch("http://localhost:7000/api/scores", {
+      const response = await fetch("https://claimpointerbackend.onrender.com/api/scores", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
