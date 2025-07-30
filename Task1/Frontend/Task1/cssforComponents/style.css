@@ -45,16 +45,16 @@ body{
     color:hsla(180, 3%, 6%, 0.996);
 }
 
-h1{
+.outerDiv h1{
 color:black;
 }
 
-.outerDiv{
+.outerDiv,.outerDiv1{
     width:100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap:5vh;
+    gap:3vh;
     align-items: center;
 }
 .claimBtn{
@@ -63,9 +63,72 @@ color:black;
     border:1px solid rgba(28, 24, 24, 0.205);
     box-shadow:0 0 50px rgba(0, 0, 0, 0.722);
     color:black;
-    background-color:rgba(97, 20, 184, 0.566);
+    background-color:rgba(255, 0, 0, 0.353);
 
 }
 .claimBtn:hover{
-    background-color: rgba(97, 20, 184, 0.271);
+    background-color: red;
 }
+
+
+
+
+/* LeaderBoard css */
+
+
+
+.formtable{
+    display: block;
+
+}
+
+.formtable table{
+    border-collapse: collapse;
+    
+
+}
+
+.outerDiv1 h1{
+    color:hsla(0, 0%, 0%, 0.615);
+}
+
+table {
+  width: 50vw;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin: 2px 0;
+  background-color: rgba(97, 20, 184, 0.205);
+  border: 1px solid #ddd;
+}
+
+/* Table Header */
+thead {
+  background-color:rgba(97, 20, 184, 0.566);
+  color: #fff;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+tbody tr:hover {
+  background-color: #f2f8ff;
+  cursor: pointer;
+}
+
+
+tbody tr:nth-child(even) {
+  background-color:rgba(97, 20, 184, 0.205);
+}
+

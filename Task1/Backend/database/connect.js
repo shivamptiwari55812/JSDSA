@@ -5,7 +5,7 @@ dotenv.config();
 //function for connecting DB
 const connectDb = async () => {
   mongoose
-    .connect(process.env.MONGOURI)
+    .connect(process.env.MONGO_URI)
     .then(() => {
       console.log("MongoDB connected ");
     })
